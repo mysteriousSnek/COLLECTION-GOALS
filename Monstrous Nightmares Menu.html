@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Goals</title>
+</head>
+<style>
+    body {
+        font-family: "ComicNeue", sans-serif;
+        min-height: 100vh;
+        background-image: url(HW.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    html, body {
+        background-color: rgb(45, 77, 137);
+        margin: 0;
+    }
+
+    .container {
+       background-color: #cfae60;
+       height: 600px;
+       width: 500px;
+       display: flex;
+       flex-direction: column; 
+       justify-content: center;
+       align-items: center;
+  }
+    ul {
+        list-style: none;
+        transform: translateY(-20px);
+    }
+    @font-face {
+        font-family: "ComicNeue";
+        src: url("Comic_Neue/ComicNeue-Regular.ttf") format("truetype");
+    }
+
+    li {
+        font-size: 40px;
+        margin: 78px 0;
+        margin-left: -30px;
+    }
+
+    span {
+      font-size: 40px;
+    }
+
+    img {
+      width: 170px;
+      height: auto;
+    }
+
+    .title {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    }
+
+    .title span {
+        width: 360px;
+        font-size: 45px;
+    }
+
+    #Wood1 {
+        width: 555px;
+        height: 40px;
+        position: absolute;
+        top: 30px;
+        left: 500px;
+    }
+
+    #Wood2 {
+        width: 555px;
+        height: 40px;
+        position: absolute;
+        top: 660px;
+        left: 500px;
+    }
+
+    #Wood3 {
+        width: 590px;
+        height: 40px;
+        position: absolute;
+        transform: rotate(90deg);
+        left: 225px;
+        top: 345px;
+    }
+
+    #Wood4 {
+        width: 590px;
+        height: 40px;
+        position: absolute;
+        transform: rotate(90deg);
+        left: 739px;
+        top: 345px;
+    }
+
+    #HookfangRTTE {
+        position: absolute;
+        width: 700px;
+        height: auto;
+        top: 0px;
+        left: 850px;
+    }
+
+    #Hookfang3 {
+        position: absolute;
+        width: 700px;
+        height: auto;
+        top: 100px;
+        left: 0px;
+    }
+       @media (max-width: 1200px) {
+
+        html, body {
+            background-image: url(HW.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+           body {
+            width: 700px;
+            height: 1050px;
+            zoom: 0.7;
+        }
+
+        .container {
+            border-radius: 10px;
+        }
+
+        #Wood1, #Wood2, #Wood3, #Wood4, #Hookfang3, #HookfangRTTE {
+            display: none;
+        }
+   }
+</style>
+<body>
+
+<img id="Wood1" src="Wood.png">
+<img id="Wood2" src="Wood.png">
+<img id="Wood3" src="Wood.png">
+<img id="Wood4" src="Wood.png">
+
+<div class="container">
+    <div class="title">
+        <img src="Stoker Class Symbol.png">
+        <span>Monstrous Nightmares</span>
+    </div>
+
+    <ul>
+        <li><a href="How to Train Your Dragon (Live Action) Action Figures.html">Action Figures</a></li>
+        <li><a href="How to Train Your Dragon (Live Action) Figures.html">Figures</a></li>
+        <li><a href="How to Train Your Dragon (Live Action) Plushies.html">Plushies</a></li>
+    </ul>
+</div>
+
+<img id="HookfangRTTE" src="HookfangRTTERender.png">
+<img id="Hookfang3" src="Hookfang3Render.png">
+
+</body>
+</html>

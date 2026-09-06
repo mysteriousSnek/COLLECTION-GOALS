@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Goals</title>
+    <style>
+
+    /*FÜR JEDES HTML ELEMENT*/
+
+        * {
+        box-sizing: border-box;
+    } 
+
+    /*GENERAL*/
+
+    body {
+        background-image: url(HW.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        padding-top: 140px;
+    }
+
+    html, body {
+        background-color: rgb(45, 77, 137);
+        margin: 0;
+    }
+
+   .center-wrap {
+        min-height: calc(100vh - 140px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*HEADER*/
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 140px;
+        background-color: #5c2505;
+        padding: 0 90px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: top 0.3s;
+        border-bottom: 7px solid #331200;
+        z-index: 1;
+    }
+
+    /*TEXT*/
+
+       @font-face {
+        font-family: "ComicNeue";
+        src: url("Comic_Neue/ComicNeue-Regular.ttf") format("truetype");
+    }
+
+    .title {
+        font-family: "ComicNeue", sans-serif;
+        font-size: 65px;
+        margin: 0;
+        text-align: center;
+        
+    }
+
+    p {
+    font-family: "ComicNeue", sans-serif;
+    font-size: 30px;   
+    }
+
+    #CurrentGoals {
+    padding-left: 50px;
+    padding-top: 0;
+    margin: 7px 0 8px;
+
+    }
+
+    ul {
+    margin: 0;
+    padding-left: 50px;
+    padding-top: 0;
+    }
+
+    .CurrentList {
+    margin: 0;
+    line-height: 1.0;
+    }
+
+    #Socials {
+    margin-bottom: 60px;
+    }
+
+    #Introduction {
+    text-align: center;
+    max-width: 550px;
+    }
+
+    li {
+    font-family: "ComicNeue", sans-serif;
+    font-size: 30px;
+    padding: 10px;
+    }
+
+    #ulListe {
+    list-style: none;
+    }
+
+    .underlined {
+        text-decoration: underline;
+    }
+
+    .BurgerOptions {
+        margin: 80px 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .BurgerOptions a {
+        display: flex;
+        align-items: center;
+    }
+
+    /*BOXES*/
+
+    .container {
+       background-color: #cfae60;
+       width: 700px;
+       height: 400px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: black;
+       border-radius: 4px;
+    }
+
+    .container1 {
+       position: relative;
+       top: 50px;
+       left: 50px;
+       background-color: #cfae60;
+       width: 650px;
+       height: 250px;
+       color: black;
+       border-radius: 4px;
+       border: 20px solid #5c2505;
+    }
+
+       .container2 {
+       transform: translateX(200%);
+       background-color: #cfae60;
+       width: 400px;
+       height: 400px;
+       color: black;
+       border-radius: 100%;
+       border: 20px solid #5c2505;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       box-sizing: border-box;
+    }
+
+    .container2 ul {
+        list-style: none;
+        margin-left: -50px;
+        margin-bottom: 100px;
+    }
+
+    .container2 li {
+        margin-bottom: 8px;
+    }
+
+    /*HAMBURGER MENU*/
+
+    .off-screen-menu {
+        background-color: #ffffff;
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position: fixed;
+        top: 0;
+        left: -450px;
+        right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: left .3s ease;
+        z-index: 999;
+        pointer-events: none;
+    }
+    .off-screen-menu.active {
+        left: 0;
+        right: auto;
+        pointer-events: auto;
+    }
+
+    nav {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .ham-menu {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .ham-menu span {
+       height: 5px;
+       width: 100%;
+       background-color: rgb(57, 25, 146);
+       border-radius: 25px;
+       position: absolute;
+       left: 0;
+       top: 50%;
+       transform: translateY(-50%);
+       transition: .3s ease;
+    }
+
+    .ham-menu span:nth-child(1) {
+        top: 10px;
+    }
+
+    .ham-menu span:nth-child(2) {
+        top: 22px;
+    }
+
+    .ham-menu span:nth-child(3) {
+        top: 34px;
+    }
+
+    .ham-menu.active span:nth-child(1) {
+        top: 22px;
+        transform: rotate(45deg);
+    }
+      .ham-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.active span:nth-child(3) {
+        top: 22px;
+        transform: rotate(-45deg);
+    }
+    
+    /*PICTURES*/
+
+    .gallery {
+        position : relative;
+        height: 500px;
+    }
+
+    #Nf,
+    #Mn,
+    #Dn, 
+    #Tt,
+    #Ttt,
+    #BoulderClass,
+    #Wood1,
+    #Wood2,
+    #Wood3,
+    #Wood4 {
+        position: absolute;
+        width: 600px;
+        height: auto;
+    }
+
+    #Nf {
+        width: 450px;
+        left: 900px;
+        top: 500px;
+    }
+
+    #Mn {
+        top: 200px;
+        right: 930px;
+    }
+
+    #Dn {
+        left: 850px;
+        top: 90px;
+    }
+
+    #Tt {
+     width: 400px;
+     top: 800px;
+     left: 750px;
+    }
+   
+    #Ttt {
+     width: 150px;
+     top: 1050px;
+     left: 700px;
+     transform: rotate(45deg);
+    }
+
+    #BoulderClass {
+        width: 1300px;
+        top: 515px;
+        left: 100px;
+
+    }
+
+
+    #Wood1{
+        width: 700px;
+        height: 40px;
+        top: 226px;
+        left: 410px;
+    }
+
+    #Wood2 {
+        width: 409px;
+        height: 40px;
+        top: 415px;
+        left: 886px;
+        transform: rotate(90deg);
+    }
+
+    #Wood3 {
+        width: 409px;
+        height: 40px;
+        top: 415px;
+        left: 225px;
+        transform: rotate(90deg);
+    }
+
+    #Wood4 {
+        width: 700px;
+        height: 40px;
+        top: 599px;
+        left: 411px;
+    }
+    #TidalClass {
+      width: 150px;
+      height: auto;
+      margin-left: -60px;
+    }
+
+    #StrikeClass {
+      width: 150px;
+      height: auto;
+      margin-left: -60px;
+    }
+
+    #StokerClass {
+      width: 150px;
+      height: auto;
+      margin-left: -60px;
+    }
+
+    /*Media*/
+   @media (max-width: 1200px) {
+    body {
+        padding-top: 90px;
+        display: flex;
+        flex-direction: column;
+    }
+
+     #Mn {
+      width: 300px;
+      order: 1;
+      position: static;
+      display: block;
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+
+    .center-wrap {
+        order: 2;
+    }
+
+     #Nf {
+      width: 300px;
+      order: 3;
+      position: static;
+      display: block;
+      width: 70%;
+      height: auto;
+      margin: 20px auto;
+    }
+
+
+    .container1 {
+        order: 4;
+        position: static;
+    }
+
+    #Dn {
+      width: 300px;
+      order: 5;
+      position: static;
+      display: block;
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+
+    header {
+        height: 90px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .center-wrap,
+    .container1,
+    .container2,
+    .gallery,
+    img {
+        position: static;
+        transform: none;
+    }
+
+    .center-wrap {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .container,
+    .container1,
+    .container2 {
+        width: calc(100% - 30px);
+        height: auto;
+        min-height: 200px;
+        margin: 15px auto;
+    }
+
+    .container2 {
+        order: 6;
+        position: static;
+        transform: none;
+        width: 350px;
+        height: 350px;
+        margin: 15px auto;
+        min-height: 0;
+    }
+
+    #Tt,
+    #Ttt,
+    #BoulderClass,
+    #Wood1,
+    #Wood2,
+    #Wood3,
+    #Wood4 {
+        display: none;
+    }
+}
+    </style>
+    </head>
+    <body>
+
+    <!--MENU-->
+
+        <div class="off-screen-menu">
+<ul id="ulListe">
+
+<li class="BurgerOptions">
+<a href="How to Train Your Dragon (Live Action) Menu.html">
+        <img id="StrikeClass" src="Strike Class Symbol.png">
+        <span>How to Train Your Dragon (Live Action)</span>
+</a>
+
+<li class="BurgerOptions">
+<a href="Christmas 2026 Menu.html">
+    <img id="TidalClass" src="Tidal Class Symbol.png">
+    <span>Christmas 2026</span>
+</a>
+</li>
+
+<li class="BurgerOptions">
+<a href="Monstrous Nightmares Menu.html">
+    <img id="StokerClass" src="Stoker Class Symbol.png">
+    <span>Monstrous Nightmares</span>
+</a>
+</li>
+
+</li>
+</ul>
+
+ </div>
+        <nav>
+          <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+
+    <!--HEADER-->
+
+    <header id="FixedHeader">
+    <h1 class="title">COLLECTION GOALS</h1>
+    </header>
+
+    <!--PICTURES-->
+
+    <img id="Wood1" src="Wood.png">
+
+    <img id="Wood2" src="Wood.png">
+
+    <img id="Wood3" src="Wood.png">
+
+    <img id="Wood4" src="Wood.png">
+
+    <img id="Nf" src="Nightfury Startpage.png">
+
+    <img id="Mn" src="Monstrous Nightmare Startpage.png">
+
+    <img id="Dn" src="Deadly Nadder Startpage.png">
+
+    <img id="Tt" src="Terrible Terror Startpage.png">
+     
+    <img id="Ttt" src="Terrible Terror Tail Startpage.png">
+
+    <img id="BoulderClass" src="BoulderClass.png">
+
+
+    <!--TEXT/BOXES-->
+
+    <div class="center-wrap">
+    <div class="container">
+    <p id="Introduction"><span class="underlined">Welcome!</span> I'm a big fan of How to Train Your Dragon and a passionate collector. On this site, I create lists for the different collecting goals I’m currently working towards. I’ll be documenting the achievements I’ve made with a checklist to help keep everything organized.</p>
+    </div>
+    </div>
+
+    <div class="container1">
+    <p id="CurrentGoals"><span class="underlined">Current Goals:</span></p>
+    <ul>
+
+    <li class="CurrentList">How to Train Your Dragon (Live Action)</li>
+    <li class="CurrentList">Christmas 2026 Wishlist</li>
+    <li class="CurrentList">Monstrous Nightmares</li>
+
+    </ul>
+    </div>
+
+    <div class="container2">
+    <p id="Socials"><span class="underlined">Socials:</span></p>
+    <ul>
+         <li><a href="https://www.youtube.com/channel/UCfEXl4s9Cmk6bAJLNTuSrUg">YouTube</a></li>
+         <li><a href="https://www.instagram.com/mysterious.snek/">Instagram</a></li>
+    </ul>
+    </div>
+
+    </body>
+    <script>
+    
+    //HAMBURGER MENU
+
+    const hamMenu = document.querySelector('.ham-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+
+    hamMenu.addEventListener('click', () => {
+        hamMenu.classList.toggle('active');
+        offScreenMenu.classList.toggle('active');
+    });
+    </script>
+
+    </html>

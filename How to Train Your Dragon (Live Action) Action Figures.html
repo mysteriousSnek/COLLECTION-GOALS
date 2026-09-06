@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Goals</title>
+</head>
+<style>
+  body {
+        font-family: "ComicNeue", sans-serif;
+        min-height: 100vh;
+        background-image: url(HW.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   html, body {
+        background-color: rgb(45, 77, 137);
+        margin: 0;
+    }
+
+    .Container {
+        position: relative;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        background-color: #cfae60;
+        height: 1100px;
+        width: 1100px;
+        border-radius: 20px;
+        }
+
+     @font-face {
+        font-family: "ComicNeue";
+        src: url("Comic_Neue/ComicNeue-Regular.ttf") format("truetype");
+    }
+
+    ul {
+        width: 300px;
+        list-style: none;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    li {   
+        margin: 30px 0;
+        text-align: left;
+    }
+
+    u {
+     text-decoration-thickness: 1.2px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+       margin: 50px 0;
+       text-align: left;
+       width: 300px;
+       list-style: none;
+       margin-left: auto;
+       margin-right: 20px;
+    }
+
+    .ContainerAD {
+        position: relative;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 100px 260px 140px 120px 40px;
+        column-gap: 0px;
+        box-sizing: border-box;
+        padding: 0 16px;
+        background-color: #5c2505;
+        width: 700px;
+        height: 70px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    .ContainerAD.checked {
+        background-color: rgb(69, 69, 69);
+    }
+
+    .ContainerAD.checked::after {
+        content: "";
+        position: absolute;
+        left: 35px;
+        right: 85px;
+        top: 50%;
+        height: 3px;
+        background-color: #000000;
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 3;
+   }
+
+    .ad-list {
+        position: absolute;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+
+    .ContainerAD img {
+        width: 100px;
+        height: auto;
+        object-fit: cover;
+        justify-self: center;
+        transform: translateY(-15px);
+    }
+
+    .ContainerAD img.checked {
+        filter: saturate(0%);
+    }
+
+    .ContainerAD h1 {
+        text-align: left;
+        transform: translateY(-15px);
+    }
+
+    h1.checked {
+        filter: saturate(0%);
+        opacity: 0.5;
+    }
+
+    .Difficulty {
+        display: flex;
+        gap: 10px;
+        margin: 0;
+        transform: translateY(-15px);
+    }
+
+    .Difficulty.checked {
+        filter: saturate(0%);
+    }
+
+    .A {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    
+    .A.checked {
+        filter: saturate(0%);
+        box-shadow: none !important;
+    }
+
+    .links {
+        display: inline-block;
+        font-size: 20px;
+        margin: 0;
+        color: #2200ff;
+        transform: translateY(-15px);
+        text-decoration: underline;
+    }
+
+    .links.checked {
+        filter: saturate(0%);
+    }
+
+    .checkmark {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #000000;
+        transform: translateY(-15px);
+        cursor: pointer;
+    }
+
+    .checkmark.checked {
+        background-color: rgb(30, 141, 30);
+    }
+
+    .checkmark.checked::after {
+        content: "✓"; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 40px;
+
+    }
+
+    #mysteryclass {
+        position: absolute;
+        top: 450px;
+        right: 0px;
+        width: 1100px;
+        height: auto;
+        pointer-events: none;
+    }
+
+    #dragonaandridersets {
+        margin-top: 130px;
+    }
+
+    @media (max-width: 1200px) {
+        .Container {
+            display: flex;
+            flex-direction: column;
+            zoom: clamp(0.25, 8vw, 1);
+            margin-left: 10px;
+            margin-right: 10px;
+            height: auto;
+        }
+        .ad-list {
+            position: static;
+            zoom: 0.64;
+            margin: 10px auto;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        
+        ul {
+        margin-top: 4px;
+        order: 3;
+        width: calc(100% - 0px);
+        margin-left: 15px;
+        padding-left: 0;
+        }
+
+        p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        order: 4;
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        padding-left: 0; 
+        }
+
+        #mysteryclass {
+            margin: 0px auto;
+            order: 5;
+            width: 500px;
+            position: static;
+        }
+
+        #dragonaandridersets {
+            order: 6;
+            margin-top: 5px;
+        }
+
+         li {
+            margin: 10px;
+         }
+    }
+   </style>
+    <body>
+
+        <div class="Container">
+       <h1><u>Basic Action Figures</u></h1>
+
+<div class="ad-list">
+       <div class="ContainerAD">
+        <img src="Strike Class Symbol.png" alt="Strike Class Symbol">
+        <h1>Toothless</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); box-shadow: 0 0 10px rgba(0, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://amzn.eu/d/05T0b4BA" target="_blank"><span class="links">Amazon.de</span></a>
+        <div class="checkmark"></div>
+       </div>
+
+
+       
+       <div class="ContainerAD">
+        <img src="Strike Class Symbol.png" alt="Strike Class Symbol">
+        <h1>Skrill</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); box-shadow: 0 0 10px rgba(255, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://ebay.io/m/fVBoQk" target="_blank"><span class="links">Ebay.de</span></a>
+        <div class="checkmark"></div>
+    </div>
+
+
+          
+       <div class="ContainerAD">
+        <img src="Boulder Class Symbol.png" alt="Boulder Class Symbol">
+        <h1>Gronckle</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); box-shadow: 0 0 10px rgba(0, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://amzn.eu/d/03OUWuec" target="_blank"><span class="links">Amazon.de</span></a>
+        <div class="checkmark"></div>
+    </div>
+
+           <div class="ContainerAD">
+        <img src="Boulder Class Symbol.png" alt="Boulder Class Symbol">
+        <h1>Gronckle (Green)</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); box-shadow: 0 0 10px rgba(255, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://ebay.io/m/o6fdSO" target="_blank"><span class="links">Ebay.de</span></a>
+        <div class="checkmark"></div>
+    </div>
+
+        <div class="ContainerAD">
+        <img src="Stoker Class Symbol.png" alt="Stoker Class Symbol">
+        <h1>Terrible Terror</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); box-shadow: 0 0 10px rgba(255, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://ebay.io/m/QNXJsf" target="_blank"><span class="links">Ebay.de</span></a>
+        <div class="checkmark"></div>
+    </div>
+
+    
+           <div class="ContainerAD">
+        <img src="Tracker Class Symbol.png" alt="Tracker Class Symbol">
+        <h1>Rumblehorn</h1>
+        <div class="Difficulty">
+            <div class="A" style="background-color: rgb(0, 255, 0); box-shadow: 0 0 10px rgba(0, 255, 0);"></div>
+            <div class="A" style="background-color: rgb(255, 255, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: rgb(255, 166, 0); opacity: 0.5;"></div>
+            <div class="A" style="background-color: red; opacity: 0.5;"></div>
+        </div>
+        <a href="https://amzn.eu/d/0fFGiOmY" target="_blank"><span class="links">Amazon.de</span></a>
+        <div class="checkmark"></div>
+    </div>
+    </div>
+
+    <img id="mysteryclass" src="MysteryClass.png">
+
+
+      <ul>
+        <li><u>Manufacturer:</u> Spinmaster</li>
+        <li><u>Year:</u> 2025</li>
+        <li><u>Items in this set:</u> 6</li>
+        <li><u>Already collected Items:</u> 4/6</li>
+       </ul>
+        <p>The basic dragons for the live-action are a bit random, since there is no Stormfly, Hookfang, etc. Instead, they included background dragons like the Rumblehorn. I really like that they’ve included the Skrill, Rumblehorn, and Terrible Terrors. The figures have nice details, and I like all of them, but Toothless looks a bit stupid and comes across as rather cheap compared to the others. The Terrible Terrors and the green Gronckle haven’t arrived in my country yet, so they’re difficult to get for now. But I’m really excited to get them!</p>
+
+          <h1 id="dragonaandridersets" ><u>Dragon and Rider Sets</u></h1>
+        </div>
+
+    <script>
+  
+    const checkmarks = document.querySelectorAll(".checkmark");
+    const savedItems = JSON.parse(
+        localStorage.getItem("checkedActionFigures") || "[]"
+    );
+
+    checkmarks.forEach(checkmark => {
+    checkmark.addEventListener("click", () => {
+        const container = checkmark.closest(".ContainerAD");
+
+        checkmark.classList.toggle("checked");
+        container.classList.toggle("checked");
+        container.querySelector("img").classList.toggle("checked");
+        container.querySelector(".Difficulty").classList.toggle("checked");
+        container.querySelector(".links").classList.toggle("checked");
+        container.querySelector("h1").classList.toggle("checked");
+
+        container.querySelectorAll(".A").forEach(point => {
+            point.classList.toggle("checked");
+
+     });
+
+     if (checkmark.classList.contains("checked")) {
+     container.closest(".ad-list").appendChild(container);
+     }
+
+     const name = container.querySelector("h1").textContent.trim();
+     let items = JSON.parse(
+        localStorage.getItem("checkedActionFigures") || "[]"
+    );
+
+    if (checkmark.classList.contains("checked")) {
+        items.push(name);
+    } else {
+        items = items.filter(item => item!== name);
+    }
+    localStorage.setItem("checkedActionFigures", JSON.stringify(items));
+    }
+     )
+  });
+
+checkmarks.forEach(checkmark => {
+    const container = checkmark.closest(".ContainerAD");
+    const name = container.querySelector("h1").textContent.trim();
+
+    if (savedItems.includes(name)) {
+        checkmark.click();
+    }
+});
+    </script>
+    </body>
